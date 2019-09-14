@@ -1,0 +1,356 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Commons: Beyond StringUtils</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css">
+    <link rel="shortcut icon" href="#" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <script type="text/x-mathjax-config">
+         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+
+
+
+
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Going Beyond <code style="text-transform: none;">StringUtils</code></h1>
+            <h4>A broader look at Apache Commons.</h4>
+            <br>
+                <small>Created by
+                    <a href="https://github.com/chtompki">
+                        Rob Tompkins (chtompki)</a></small><br/>
+                <small>Presentation Address: <a href="https://bit.ly/2lv0PW0">
+                    https://bit.ly/2lv0PW0</a></small>
+            </p>
+
+        </section>
+
+        <section>
+            <h3>Who I am.</h3>
+            <ul>
+                <li class="fragment"><a href="mailto:chtompki@apache.org">chtompki@apache.org</a>
+                </li>
+                <li class="fragment">Apache Member</li>
+                <li class="fragment">Apache Commons PMC</li>
+                <li class="fragment">Software Developer (Java, DevOps)</li>
+                <li class="fragment">Mathematician/Logician (?, sure why not).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Poll:</h3>
+            <ul>
+                <li class="fragment">Who here has never heard of/never used any
+                    Apache Commons component?</li>
+                <li class="fragment">Who here has only used <code>commons-lang3</code>?</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Agenda</h3>
+            <ul>
+                <li class="fragment">About Apache Commons</li>
+                <li class="fragment">Apache Commons Components</li>
+                <ul>
+                    <li class="fragment"><code>commons-lang</code></li>
+                    <li class="fragment"><code>commons-text</code></li>
+                    <li class="fragment"><code>commons-cli</code></li>
+                    <li class="fragment"><code>commons-fileupload</code></li>
+                    <li class="fragment"><code>commons-dbcp</code></li>
+                </ul>
+                <li class="fragment">Q&A</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Who is this presentation for?</h3>
+            <ul>
+                <li class="fragment">JVM Developers</li>
+                <li class="fragment">Beginners, Intermediates, Pros</li>
+                <li class="fragment">Potential Contributors</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Why is this talk important?</h3>
+            <p class="fragment">
+                Everything that is not part of our domain, business logic,
+                or integration logic has most likely been written by somebody
+                much smarter than we are.
+            </p>
+        </section>
+
+        <section>
+            <h3>History and Mission</h3>
+            <ul>
+                <li class="fragment"><strong>History.</strong> The Jakarta Commons Project</li>
+                <li class="fragment"><strong>Mission.</strong> (opinion) Provide a platform for other ASF projects
+                    to come together, collaborate and share
+                    code.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>Components</h1>
+            <h3><code style="text-transform: none;">commons-lang</code></h3>
+        </section>
+
+        <section>
+            <h3>First example. <code style="text-transform: none;">StringUtils</code></h3>
+            <pre class="fragment"><code class="java">if (string != null && !"".equals(string)) {
+    ...
+}</code></pre>
+            <pre class="fragment"><code class="java">if (!StringUtils.isEmpty(string)) {
+    ...
+}</code></pre>
+        </section>
+
+        <section>
+            <h3>Beyond <code style="text-transform: none;">StringUtils</code></h3>
+            <p>
+                <span class="fragment"><code>ArrayUtils</code>,</span>
+                <span class="fragment"><code>BooleanUtils</code>,</span>
+                <span class="fragment"><code>CharSetUtils</code>,</span>
+                <span class="fragment"><code>CharUtils</code>,</span>
+                <span class="fragment"><code>ClassPathUtils</code>,</span>
+                <span class="fragment"><code>DateFormatUtils</code>,</span>
+                <span class="fragment"><code>DateUtils</code>,</span>
+                <span class="fragment"><code>DurationFormatUtils</code>,</span>
+                <span class="fragment"><code>EnumUtils</code>,</span>
+                <span class="fragment"><code>ExceptionUtils</code>,</span>
+                <span class="fragment"><code>IEEE754rUtils</code>,</span>
+                <span class="fragment"><code>LocaleUtils</code>,</span>
+                <span class="fragment"><code>NumberUtils</code>,</span>
+                <span class="fragment"><code>ObjectUtils</code>,</span>
+                <span class="fragment"><code>RandomStringUtils</code>,</span>
+                <span class="fragment"><code>RandomUtils</code>,</span>
+                <span class="fragment"><code>SerializationUtils</code>,</span>
+                <span class="fragment"><code>SystemUtils</code>,</span>
+                <span class="fragment"><code>ThreadUtils</code></span>
+            </p>
+        </section>
+
+        <section>
+            <h3><code style="text-transform: none;">SystemUtils</code></h3>
+            <ul>
+                <li class="fragment">
+                    Easy access to Java system properties
+                    <pre class="fragment"><code class="java">boolean win10 = SystemUtils.IS_OS_WINDOWS_10;
+String javaHomePath = SystemUtils.JAVA_HOME;
+File javaHome = SystemUtils.getJavaHome();</code></pre>
+                </li>
+                <li class="fragment">
+                    Which Java Version am I running on?
+                    <pre class="fragment"><code class="java">SystemUtils
+  .isJavaVersionAtLeast(JavaVersion.JAVA_1_8);</code></pre>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Java version check for testing</h3>
+            <pre class="fragment"><code class="java">import static org.junit.Assume.assumeTrue;
+import static org.apache.commons.lang3.JavaVersion.JAVA_1_8;
+
+@Test
+public void java_version_specific_test() {
+    assumeAtLeast(JAVA_1_8);
+    // do something only possbile with Java 8+
+}
+
+private static assumeAtLeast(JavaVersion version) {
+    assumeTrue(SystemUtils.isJavaVersionAtLeast(version));
+}</code></pre>
+        </section>
+
+        <section>
+            <h1><code style="text-transform: none;">commons-text</code></h1>
+        </section>
+
+        <section>
+            <h3><code style="text-transform: none;">StrSubstitutor</code></h3>
+            <ul>
+                <li class="fragment">provides a convenient way to do string substitutions</li>
+                <li class="fragment">think of it as a template engine in a single class</li>
+            </ul>
+            <pre class="fragment"><code class="java">String replaced = StrSubstitutor.replaceSystemProperties(
+    "You are running with java.version = ${java.version}" +
+    " and os.name = ${os.name}.");</code></pre>
+        </section>
+
+        <section>
+            <h3><code style="text-transform: none;">StrSubstitutor</code> custom substitutions</h3>
+            <pre class="fragment"><code class="java">Map&lt;String, String&gt; values
+    = singletonMap("customKey", "some value");
+StrSubstitutor strSubstitutor = new StrSubstitutor(values);
+strSubstitutor.replace(
+    "Template with ${customKey} and ${another:-fallback value}");
+</code></pre>
+        </section>
+
+        <section>
+            <h3><code style="text-transform: none;">StringEscapeUtils</code></h3>
+            <ul>
+                <li class="fragment">Provides a convenient way to do escaping</li>
+            </ul>
+            <pre class="fragment"><code class="java">StringEscapeUtils.escapeJson("He didn't say, \"stop!\"");
+// "He didn\\'t say, \\\"stop!\\\""
+StringEscapeUtils.escapeJava("\\\b\t\r");
+// "\\\\\\b\\t\\r" </code></pre>
+        </section>
+
+        <section>
+            <h1><code style="text-transform: none;">commons-fileupload</code></h1>
+        </section>
+
+        <section>
+            <h3><code style="text-transform: none;">ServletFileUpload</code></h3>
+            <pre class="fragment"><code class="java">DiskFileItemFactory factory = new DiskFileItemFactory();
+// Configure a repository (to ensure a secure
+//temp location is used)
+ServletContext servletContext =
+            this.getServletConfig().getServletContext();
+File repository =
+            (File) servletContext
+            .getAttribute("javax.servlet.context.tempdir");
+factory.setRepository(repository);
+// Create a new file upload handler
+ServletFileUpload upload = new ServletFileUpload(factory);
+// Parse the request (HttpServletRequest request from doPost)
+List&lt;FileItem&gt; items = upload.parseRequest(request);</code></pre>
+        </section>
+
+        <section>
+            <h1><code style="text-transform: none;">commons-cli</code></h1>
+        </section>
+
+        <section>
+            <h3>What I want:</h3>
+            <img src="./images/commons-cli.png" style="width: 650px;"/>
+        </section>
+
+        <section>
+            <h3>What Java gives me:</h3>
+            <pre class="fragment"><code class="java">public static void main(String[] args) {
+  if(args.length > 0) {
+    if("-help".equals(args[0])) {
+      printHelp()
+    }
+  }
+}</code></pre>
+        </section>
+
+        <section>
+            <h3>Defining <code style="text-transform: none;">commons-cli Options</code></h3>
+            <pre class="fragment"><code class="java">Options options = new Options();
+options.addOption("h", "help", false, "display the help");
+options.addOption(withArgName("file")
+                 .hasArg()
+                 .withDescription("use given file for log")
+                 .create("logfile"));</code></pre>
+        </section>
+
+        <section>
+            <h3>Parsing the Command Line</h3>
+            <pre class="fragment"><code class="java">CommandLine line = new DefaultParser().parse(options, args);
+if(line.hasOption("help")) {
+  new HelpFormatter().printHelp("cool-cli", options);
+} else if(line.hasOption("file")) {
+  this.logfile = line.getOptionValue("logfile");
+  System.out.println("Writing to logfile: " + this.logfile);
+  ...
+}</code></pre>
+        </section>
+
+        <section>
+            <h3>Result?</h3>
+            <img src="images/cli-output.png" />
+        </section>
+
+        <section>
+            <h1><code style="text-transform: none;">commons-dbcp</code></h1>
+        </section>
+
+        <section>
+            <h3><code style="text-transform: none;">BasicDataSource</code></h3>
+            <p class="fragment">Commonly used with <code>org.springframework.jdbc.core.JdbcTemplate</code>.</p>
+            <pre class="fragment"><code class="java">javax.sql.DataSource dataSource = new BasicDataSource();
+dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+dataSource.setUrl("jdbc:mysql://localhost:3306/emp");
+dataSource.setUsername("someUser");
+dataSource.setPassword("somePassword");
+dataSource.setInitialSize(5); //connection pool size
+</code></pre>
+        </section>
+
+        <section>
+            <h3>Other Components</h3>
+            <ul>
+                <li class="fragment"><code style="text-transform: none;">commons-codec</code></li>
+                <li class="fragment"><code style="text-transform: none;">commons-crypto</code></li>
+                <li class="fragment"><code style="text-transform: none;">commons-csv</code></li>
+                <li class="fragment"><code style="text-transform: none;">commons-imaging</code></li>
+                <li class="fragment"><code style="text-transform: none;">commons-rng</code></li>
+                <li class="fragment"><code style="text-transform: none;">commons-validator</code></li>
+                <li class="fragment">...</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Questions?</h2>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/math/math.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ],
+
+        math: {
+            mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+            config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+        }
+    });
+</script>
+</body>
+</html>
