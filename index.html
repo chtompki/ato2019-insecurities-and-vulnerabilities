@@ -35,7 +35,7 @@
     <div class="slides">
         <section>
             <h1>Insecurities and Vulnerabilities</h1>
-            <h4>Keeping the NVD Current.</h4>
+            <h4>Keeping the NVD Current by Properly Reporting CVE's.</h4>
             <br>
                 <small>Created by
                     <a href="https://github.com/chtompki">
@@ -71,10 +71,80 @@
                     <span class="fragment">- Common vulnerability and exposures.</span></li>
                 <li class="fragment"><span><strong>Def'n.</strong> CNA</span>
                     <span class="fragment">- CVE numbering authority.</span>
-                    <ul class="fragment">
-                        <li>e.g. </li>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>CVE and NVD Relationship</h3>
+            <p class="fragment">CVE and NVD are separate programs.</p>
+            <ul>
+                <li class="fragment"><strong>CVE list</strong> - a list maintained by MITRE
+                    <ul>
+                        <li class="fragment">Identification number</li>
+                        <li class="fragment">Description</li>
+                        <li class="fragment">At least one public reference of a know cybersecurity vulnerability</li>
                     </ul>
                 </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>CVE and NVD Relationship</h3>
+            <p>CVE and NVD are separate programs.</p>
+            <ul>
+                <li><strong>NVD</strong> - A vulnerability database maintained by the National Institute
+                    of Standards and Technology</li>
+                <ul>
+                    <li class="fragment">Fed by CVE list</li>
+                    <li class="fragment">More advanced searching features (e.g. filtering by OS, vendor name
+                        product name, version, type, severit, etc.)</li>
+                </ul>
+            </ul>
+        </section>
+
+
+
+        <section>
+            <h3>CVE and NVD Relationship</h3>
+            <p>CVE and NVD are separate programs.</p>
+            <ul>
+                <li>Sponsors:
+                    <ul>
+                        <li class="fragment">U.S. Department of Homeland Security</li>
+                        <li class="fragment">Cybersecurity and Infrastructure Security Agency</li>
+                    </ul>
+                </li>
+                <li class="fragment">Available to the public and free to use.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>CVE Numbering Authority Examples</h3>
+            <ul>
+                <li class="fragment">The Apache Software Foundation</li>
+                <li class="fragment">Apple Inc.</li>
+                <li class="fragment">Kubernetes</li> <!-- Kubernetes issues only -->
+                <li class="fragment">Snyk</li><!-- Vulnerabilities in third-party products discovered by Snyk only -->
+                <li class="fragment">Red Hat, Inc.</li>
+                <li class="fragment">Huawei Technologies</li>
+                <li class="fragment">Larry Cashdollar</li>
+                <li class="fragment">MITRE Corporation</li><!-- All vulnerabilities, and Open Source software product vulnerabilities, not already covered by a CNA listed on this page -->
+                <li class="fragment">...</li>
+                <p class="fragment"><a href="https://cve.mitre.org/cve/request_id.html#cna_participants">Numbering Authority List</a></p>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Example CVE (CVE-2019-10086)</h3>
+            <img src="images/example_cve.png"/>
+        </section>
+
+        <section>
+            <h3>References.</h3>
+            <ul>
+                <li><a href="https://cve.mitre.org/about/faqs.html">MITRE FAQs</a></li>
+                <li><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10086">CVE-2019-10086</a></li>
             </ul>
         </section>
 
