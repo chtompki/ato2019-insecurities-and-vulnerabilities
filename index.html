@@ -158,13 +158,19 @@
         </section>
 
         <section>
-            <h3>You can use Mitre as your Numbering Authority</h3>
-            <img src="images/cve-form.png" />
+            <h4>You can use Mitre as your Numbering Authority</h4>
+            <p class="fragment" style="font-size: 28px"><a href="https://cveform.mitre.org">https://cveform.mitre.org</a></p>
+            <img class="fragment" src="images/cveform-types.png"  style="height: 475px"/>
+        </section>
+
+        <section>
+            <h4>You can use Mitre as your Numbering Authority</h4>
+            <img class="fragment" src="images/cve-form-request-new.png" style="height: 525px"/>
         </section>
 
         <section>
             <h3>You'll end up with just a number</h3>
-            <img src="images/cve-created.png" />
+            <img src="images/cve-created.png" style="height: 500px"/>
         </section>
 
         <section>
@@ -187,6 +193,49 @@
                 <li class="fragment">Release the fix ensure that the CVE is documented in the Release Notes somewhere.</li>
                 <li class="fragment">Make a public announcement of the fix so that your community knows they need to upversion.</li>
             </ul>
+        </section>
+
+        <section>
+            <h4>Sumitting your announcement to Mitre</h4>
+            <p class="fragment" style="font-size: 28px"><a href="https://cveform.mitre.org">https://cveform.mitre.org</a></p>
+            <img class="fragment" src="images/cveform-types.png"  style="height: 475px"/>
+        </section>
+
+        <section>
+            <h4>Notify CVE about a Publication</h4>
+            <img class="fragment" src="images/cveform-notify.png"  style="height: 550px"/>
+        </section>
+
+        <section>
+            <h4>Notify CVE about a Publication **Description Formatting**</h4>
+            <ul>
+                <li class="fragment">
+                    No evidence of hard requirements on description, but format MATTERS!
+                    <ul><li class="fragment">e.g. I've personally made sumissions here 3 & 4 times for a distinct CVE</li></ul>
+                </li>
+                </li>
+                <li class="fragment">There are 3 defined formats that will result in successful submissions
+                    <ul>
+                        <li class="fragment">JSON - <a href="https://github.com/CVEProject/automation-working-group/blob/master/cve_json_schema/DRAFT-JSON-file-format-v4.md">schema on github</a></li>
+                        <li class="fragment">Flat file</li>
+                        <li class="fragment">CSV</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h4>JSON Schema</h4>
+            <pre class="fragment"><code class="json">{
+    "data_type": "CVE",
+    "data_format": "MITRE",
+    "data_version": "4.0",
+    "CVE_data_meta": {
+        "ID": "CVE-YYYY-NNNNNN",
+        "ASSIGNER": "Example email address"
+        },
+    ..... (way more)
+}</code></pre>
         </section>
 
         <section>
