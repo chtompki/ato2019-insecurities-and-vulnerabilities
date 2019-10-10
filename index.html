@@ -47,7 +47,7 @@
         </section>
 
         <section>
-            <h3>Who is this guy?</h3>
+            <h4>Who is this guy?</h4>
             <ul>
                 <li class="fragment"><a href="mailto:chtompki@apache.org">chtompki@apache.org</a>
                 </li>
@@ -63,7 +63,7 @@
         </section>
 
         <section>
-            <h3>Definitions</h3>
+            <h4>Definitions</h4>
             <ul>
                 <li class="fragment"><span><strong>Def'n.</strong> NVD</span>
                     <span class="fragment">- The national vunlerability database.</span></li>
@@ -76,7 +76,7 @@
         </section>
 
         <section>
-            <h3>CVE and NVD Relationship</h3>
+            <h4>CVE and NVD Relationship</h4>
             <p class="fragment">CVE and NVD are separate programs.</p>
             <ul>
                 <li class="fragment"><strong>CVE list</strong> - a list maintained by MITRE
@@ -90,7 +90,7 @@
         </section>
 
         <section>
-            <h3>CVE and NVD Relationship</h3>
+            <h4>CVE and NVD Relationship</h4>
             <p>CVE and NVD are separate programs.</p>
             <ul>
                 <li><strong>NVD</strong> - A vulnerability database maintained by the National Institute
@@ -106,7 +106,7 @@
 
 
         <section>
-            <h3>CVE and NVD Relationship</h3>
+            <h4>CVE and NVD Relationship</h4>
             <p>CVE and NVD are separate programs.</p>
             <ul>
                 <li>Sponsors:
@@ -120,7 +120,7 @@
         </section>
 
         <section>
-            <h3>CVE Numbering Authority Examples</h3>
+            <h4>CVE Numbering Authority Examples</h4>
             <ul>
                 <li class="fragment">The Apache Software Foundation</li>
                 <li class="fragment">Apple Inc.</li>
@@ -140,7 +140,7 @@
         </section>
 
         <section>
-            <h3>Open and Non-disclosed project communications</h3>
+            <h4>Open and Non-disclosed project communications</h4>
             <p class="fragment">HAVE A PRIVATE SECURITY ALERT EMAIL!!!!!!!</p>
             <ul>
                 <li class="fragment">Standard project site.</li>
@@ -153,7 +153,7 @@
         </section>
 
         <section>
-            <h3>Are you a part of a numbering authority?</h3>
+            <h4>Are you a part of a numbering authority?</h4>
             <img src="images/apache-directions.png" />
         </section>
 
@@ -169,12 +169,12 @@
         </section>
 
         <section>
-            <h3>You'll end up with just a number</h3>
+            <h4>You'll end up with just a number</h4>
             <img src="images/cve-created.png" style="height: 500px"/>
         </section>
 
         <section>
-            <h3>Fix your defect!</h3>
+            <h4>Fix your defect!</h4>
             <h4 class="fragment">quietly....</h4>
             <ul>
                 <li class="fragment">Huh, wouldn't I just want to fix it and get a release out immeadiately?
@@ -188,7 +188,7 @@
         </section>
 
         <section>
-            <h3>Release and make a public announcement of the defect/CVE Number</h3>
+            <h4>Release and make a public announcement of the defect/CVE Number</h4>
             <ul>
                 <li class="fragment">Release the fix ensure that the CVE is documented in the Release Notes somewhere.</li>
                 <li class="fragment">Make a public announcement of the fix so that your community knows they need to upversion.</li>
@@ -218,7 +218,7 @@
                     <ul>
                         <li class="fragment">JSON - <a href="https://github.com/CVEProject/automation-working-group/blob/master/cve_json_schema/DRAFT-JSON-file-format-v4.md">schema on github</a></li>
                         <li class="fragment">Flat file</li>
-                        <li class="fragment">CSV</li>
+                        <li class="fragment">CSV (??? no docs on this???)</li>
                     </ul>
                 </li>
             </ul>
@@ -226,6 +226,7 @@
 
         <section>
             <h4>JSON schema</h4>
+            <p><a href="https://github.com/CVEProject/automation-working-group/blob/master/cve_json_schema/DRAFT-JSON-file-format-v4.md">schema definition on github</a></p>
             <pre class="fragment"><code class="json">{
     "data_type": "CVE",
     "data_format": "MITRE",
@@ -244,23 +245,40 @@
 [PRODUCT]: ...your OSS projet's name...
 [VERSION]: ...the versions of your product effected...
 [PROBLEMTYPE]:Information Disclosure
-[REFERENCES]: ...A direct link to your release that is clearly auditable...
+[REFERENCES]: ...A direct link to your release (auditable)...
 [DESCRIPTION]: ...a description of your choice...</code></pre>
         </section>
 
         <section>
-            <h3>Example CVE (CVE-2019-10086)</h3>
+            <h4>Next??</h4>
+            <p class="fragment">Email from <code>CVE-Request@mitre.org</code>:</p>
+            <img class="fragment" src="images/cve-pub-request-received.png">
+        </section>
+
+        <section>
+            <h4>Example CVE (CVE-2019-10086)</h4>
             <img src="images/example_cve.png"/>
         </section>
 
         <section>
-            <h3>Important </h3>
+            <h4>NVD Entry Example.</h4>
+            <img src="images/nvd-example.png" style="height:500px" />
         </section>
 
         <section>
-            <h3>References.</h3>
+            <h4>What have we learned here?</h4>
+            <ol>
+                <li class="fragment">It's extremely important to document CVEs and the NVD</li>
+                <li class="fragment">The process for doing it isn't unmanageable</li>
+                <li class="fragment"></li>
+            </ol>
+        </section>
+
+        <section>
+            <h4>References.</h4>
             <ul>
                 <li><a href="https://cve.mitre.org/about/faqs.html">MITRE FAQs</a></li>
+                <li><a href="https://github.com/RedHatProductSecurity/CVE-HOWTO">RedHat CVE-HOWTO (slightly outdated)</a></li>
                 <li><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-10086">CVE-2019-10086</a></li>
             </ul>
         </section>
